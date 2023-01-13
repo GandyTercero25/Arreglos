@@ -1,6 +1,7 @@
 #include<stdio.h>
 
 int main(){
+    
 int mayor_index, menor_index;
 double mayor_val, menor_val;
 
@@ -246,6 +247,9 @@ void valor_menor(double v1[], int size, double *menor_val, int *menor_index) {
 valor_mayor(v1,sizeof(v1)/sizeof(v1[0]),&mayor_val,&mayor_index);
 valor_mayor_index(v1,sizeof(v1)/sizeof(v1[0]),&mayor_index);
 valor_menor(v1,sizeof(v1)/sizeof(v1[0]),&menor_val,&menor_index);
+
+
+
 printf("\n El mayor numero es: %f: \n en la posicion: %d\n",mayor_val,mayor_index);
 printf(" El menor valor es: %.5f \n en la posicion: %d\n",menor_val,menor_index);
 
