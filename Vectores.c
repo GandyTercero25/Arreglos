@@ -1,6 +1,8 @@
 #include<stdio.h>
 
 int main(){
+int mayor_index, menor_index;
+double mayor_val, menor_val;
 
 double v1[]={
 0.3,
@@ -202,6 +204,50 @@ double v1[]={
 
 int longitud=sizeof(v1)/sizeof(v1[0]);
 
-printf("el tamaño del vector es: %d",longitud);
+
+printf("El tamano del vector es: %d",longitud);
+
+void valor_mayor(double v1[], int size, double *mayor_val, int *mayor_index){
+    *mayor_val = v1[0];
+    *mayor_index = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] > *mayor_val) {
+            *mayor_val = v1[i];
+            *mayor_index = i;
+        }
+    }
+}
+
+void valor_mayor_index(double v1[], int size, int *mayor_index) {
+    double mayor_val = v1[0];
+    *mayor_index = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] > mayor_val) {
+            mayor_val = v1[i];
+            *mayor_index = i;
+        }
+    }
+}
+
+void valor_menor(double v1[], int size, double *menor_val, int *menor_index) {
+    *menor_val = v1[0];
+    *menor_index = 0;
+    for (int i = 1; i < size; i++) {
+        if (v1[i] < *menor_val) {
+            *menor_val = v1[i];
+            *menor_index = i;
+        }
+    }
+}
+
+
+
+
+valor_mayor(v1,sizeof(v1)/sizeof(v1[0]),&mayor_val,&mayor_index);
+valor_mayor_index(v1,sizeof(v1)/sizeof(v1[0]),&mayor_index);
+valor_menor(v1,sizeof(v1)/sizeof(v1[0]),&menor_val,&menor_index);
+printf("\n El mayor numero es: %f: \n en la posicion: %d\n",mayor_val,mayor_index);
+printf(" El menor valor es: %.5f \n en la posicion: %d\n",menor_val,menor_index);
+
 
 }
